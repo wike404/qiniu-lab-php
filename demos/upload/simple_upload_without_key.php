@@ -1,5 +1,5 @@
 <?php 	
-	$PAGE_TITLE="简单文件上传－不指定key";
+	$PAGE_TITLE="简单文件上传－不指定上传文件的key";
 ?>
 <?php require("../../header.php");?>
 <?php require("../../qiniu_config.php");?>
@@ -12,7 +12,7 @@
 ?>
 <div class="box">
 	<form method="post" action="http://upload.qiniu.com" enctype="multipart/form-data" role="form">
-		<h1>简单文件上传－不指定key</h1>
+		<h1>不指定上传文件的key</h1>
 		<div class="form-group">
 			<div class="input-group">
 				<span class="input-group-addon">Token</span>

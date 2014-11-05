@@ -1,5 +1,5 @@
 <?php 	
-	$PAGE_TITLE="简单文件上传－使用saveKey";
+	$PAGE_TITLE="简单文件上传－使用saveKey作为文件名";
 ?>
 <?php require("../../header.php");?>
 <?php require("../../qiniu_config.php");?>
@@ -14,7 +14,7 @@
 ?>
 <div class="box">
 	<form method="post" action="http://upload.qiniu.com" enctype="multipart/form-data" role="form">
-		<h1>简单文件上传－使用saveKey</h1>
+		<h1>使用saveKey作为文件名</h1>
 		<div class="form-group">
 			<div class="input-group">
 				<span class="input-group-addon">Token</span>

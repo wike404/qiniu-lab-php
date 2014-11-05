@@ -40,13 +40,15 @@
 	        <li class="dropdown">
 	        	<a href="#" class="dropdown-toggle" data-toggle="dropdown"> API实例-Form模式 <span class="caret"></span></a>
 	        	<ul class="dropdown-menu" role="menu">
-	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/simple_upload_without_key.php">简单上传（不带key）</a></li>
-	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/simple_upload_with_key.php">简单上传（指定key）</a></li>
+	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/simple_upload_without_key.php">简单上传-不指定上传文件key</a></li>
+	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/simple_upload_with_key.php">简单上传-指定上传文件key</a></li>
 	        		<li class="divider"></li>
-	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/simple_upload_use_save_key.php">简单上传（使用saveKey）</a></li>
-	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/simple_upload_use_save_key_from_xparam.php">简单上传（saveKey使用扩展参数）</a></li>
+	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/simple_upload_use_save_key.php">简单上传-使用saveKey作为文件名</a></li>
+	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/simple_upload_use_save_key_from_xparam.php">简单上传-saveKey使用扩展参数</a></li>
 	        		<li class="divider"></li>
-	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/simple_upload_use_return_body.php">使用ReturnBody自定义返回内容</a></li>
+	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/simple_upload_use_return_body.php">简单上传-使用ReturnBody自定义返回内容</a></li>
+	        		<li class="divider"></li>
+	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/simple_upload_overwrite_existing_file.php">简单上传-文件覆盖上传</a></li>
 	        	</ul>
 	        </li>
 	        <li class="dropdown">

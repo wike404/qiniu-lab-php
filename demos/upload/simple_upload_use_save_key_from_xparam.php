@@ -12,7 +12,7 @@
 ?>
 <div class="box">
 	<form method="post" action="http://upload.qiniu.com" enctype="multipart/form-data" role="form">
-		<h1>简单上传-saveKey使用扩展参数</h1>
+		<h1>saveKey使用扩展参数</h1>
 		<div class="form-group">
 			<div class="input-group">
 				<span class="input-group-addon">Token</span>

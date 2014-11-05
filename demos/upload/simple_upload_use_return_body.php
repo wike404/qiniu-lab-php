@@ -1,5 +1,5 @@
 <?php
-	$PAGE_TITLE="使用ReturnBody自定义返回内容";
+	$PAGE_TITLE="简单上传-使用ReturnBody自定义返回内容";
 ?>
 <?php require("../../header.php");?>
 <?php require("../../qiniu_config.php");?>

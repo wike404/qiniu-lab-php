@@ -1,5 +1,5 @@
 <?php 	
-	$PAGE_TITLE="简单文件上传－指定key";
+	$PAGE_TITLE="简单文件上传－指定上传文件的key";
 ?>
 <?php require("../../header.php");?>
 <?php require("../../qiniu_config.php");?>
@@ -11,7 +11,7 @@
 ?>
 <div class="box">
 	<form method="post" action="http://upload.qiniu.com" enctype="multipart/form-data" role="form">
-		<h1>简单文件上传－指定key</h1>
+		<h1>指定上传文件的key</h1>
 		<div class="form-group">
 			<input name="key" value="" placeholder="请指定上传文件key" class="form-control"/>
 		</div>
