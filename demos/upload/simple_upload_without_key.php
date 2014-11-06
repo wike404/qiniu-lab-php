@@ -56,18 +56,25 @@ $token = $putPolicy -> Token(null);
 		代码
 	</div>
 	<div class="panel-body">
-		<ul class="nav nav-tabs" role="tablist">
-			<li role="presentation" class="active">
-				<a href="#php-code">PHP</a>
-			</li>
-			<li>
-				<a href="#java-code">Java</a>
-			</li>
-		</ul>
-		<div id="php-code">
-			<?php
-			include ("../code_snippet/simple_upload_without_key_php.html");
-			?>
+		<div id="code-tabs">
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation">
+					<a href="#php-code">PHP</a>
+				</li>
+				<li role="presentation">
+					<a href="#java-code">Java</a>
+				</li>
+			</ul>
+			<div id="php-code">
+				<?php
+				include ("../code_snippet/simple_upload_without_key_php.html");
+				?>
+			</div>
+			<div id="java-code">
+				<?php
+				include ("../code_snippet/simple_upload_without_key_java.html");
+				?>
+			</div>
 		</div>
 	</div>
 </div>

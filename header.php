@@ -10,9 +10,12 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="Content-Language" content="zh-CN" />
 	<link rel="stylesheet" href="<?php echo $APP_ROOT;?>/qiniu-lab-php/public/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" href="<?php echo $APP_ROOT;?>/qiniu-lab-php/public/css/bootstrap-theme.min.css"></link>
 	<link rel="stylesheet" href="<?php echo $APP_ROOT;?>/qiniu-lab-php/public/css/style.css"></link>
 	<script type="text/javascript" src="<?php echo $APP_ROOT;?>/qiniu-lab-php/public/js/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo $APP_ROOT;?>/qiniu-lab-php/public/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="<?php echo $APP_ROOT;?>/qiniu-lab-php/public/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo $APP_ROOT;?>/qiniu-lab-php/public/js/main.js"></script>
 	<title><?php echo $PAGE_TITLE;?></title>
 </head>
 <body>
@@ -25,7 +28,14 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<?php echo $APP_ROOT;?>/qiniu-lab-php">七牛实验室</a>
+			<a class="navbar-brand" href="<?php echo $APP_ROOT;?>/qiniu-lab-php">
+				<table>
+					<tr>
+						<td><img class="navbar-logo" src="<?php echo $APP_ROOT;?>/qiniu-lab-php/public/images/qiniu.png"/></td>
+						<td>&nbsp;七牛实验室</td>
+					</tr>
+				</table>
+			</a>			
 		</div>
 		  
 	 	<div class="collapse navbar-collapse" id="menu-navbar-collapse">
@@ -49,6 +59,9 @@
 	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/simple_upload_use_return_body.php">简单上传-使用ReturnBody自定义返回内容</a></li>
 	        		<li class="divider"></li>
 	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/simple_upload_overwrite_existing_file.php">简单上传-文件覆盖上传</a></li>
+	        		<li class="divider"></li>
+	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/callback_upload_using_default_body.php">回调上传－以application/x-www-form-urlencoded方式传递回调内容（默认）</a></li>
+	        		<li><a href="<?php echo $APP_ROOT;?>/qiniu-lab-php/demos/upload/callback_upload_using_json_body.php">回调上传－以application/json方式传递回调内容（需设置callbackBodyType）</a></li>
 	        	</ul>
 	        </li>
 	        <li class="dropdown">
