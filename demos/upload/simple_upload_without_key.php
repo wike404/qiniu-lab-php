@@ -67,12 +67,12 @@ $token = $putPolicy -> Token(null);
 			</ul>
 			<div id="php-code">
 				<?php
-				include ("../code_snippet/simple_upload_without_key_php.html");
+				include ("../code_snippet/simple_upload_with_key_token_php.html");
 				?>
 			</div>
 			<div id="java-code">
 				<?php
-				include ("../code_snippet/simple_upload_without_key_java.html");
+				include ("../code_snippet/simple_upload_with_key_token_java.html");
 				?>
 			</div>
 		</div>

@@ -19,7 +19,7 @@
 	<title><?php echo $PAGE_TITLE;?></title>
 </head>
 <body>
-	<nav class="navbar navbar-default" role="navigation">
+	<div class="navbar navbar-default" role="navigation">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" 
 			data-toggle="collapse" data-target="#menu-navbar-collapse">
@@ -73,5 +73,5 @@
 	        </li>
 	      </ul>
 		</div>
-	</nav>
+	</div>
 	<div id="main" class="container">
