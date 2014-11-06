@@ -1,14 +1,28 @@
-.box{
-	border: 1px solid #eee;
-	border-radius: 5px;
-	margin: 10px;
-	padding: 10px;
-}
-.box textarea{
-	width: 400px;
-	height: 160px;
-}
-.box .tip{
+.tip{
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+
+body{
+	width:800px;
+	margin:0 auto;
+}
+
+#main{
+	width:800px;
+}
+
+.navbar-logo{
+	vertical-align:middle;
+	width:35px;
+	height:35px;
+	float:left;
+}
+.navbar-brand{
+	padding:8px 10px;
+}
+.title{
+	font-weight:bold;
+	font-size:18px;
+	text-align: center;
 }
