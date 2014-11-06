@@ -35,6 +35,7 @@
 <?php if(!empty($keyToOverwrite)){ ?>
 <div class="box">
 	<form method="post" action="http://upload.qiniu.com" enctype="multipart/form-data" role="form">
+		<h1>文件覆盖上传</h1>
 		<div class="form-group">
 			<div class="input-group">
 				<span class="input-group-addon">覆盖文件key</span>
@@ -58,13 +59,16 @@
 	</form>
 </div>
 <div class="box">
-<pre><code>Qiniu_SetKeys($Qiniu_AccessKey, $Qiniu_SecretKey);
-$putPolicy=new Qiniu_RS_PutPolicy($Qiniu_Public_Bucket);
-$bucket=urlencode($Qiniu_Public_Bucket);
-$key=urlencode($keyToOverwrite);
-$putPolicy->Scope=$bucket.":".$key;
-$putPolicy->InsertOnly=0;
-$token=$putPolicy->Token(null);
+<pre><code>require_once("../../lib/qiniu/rs.php");
+$keyToOverwrite=$_GET["keyToOverwrite"];
+if(!empty($keyToOverwrite))
+{
+	Qiniu_SetKeys($Qiniu_AccessKey, $Qiniu_SecretKey);
+	$putPolicy=new Qiniu_RS_PutPolicy($Qiniu_Public_Bucket);
+	$putPolicy->Scope=$Qiniu_Public_Bucket.":".$keyToOverwrite;
+	$putPolicy->InsertOnly=0;
+	$token=$putPolicy->Token(null);
+}
 </code></pre>
 </div>
 <div class="box">
