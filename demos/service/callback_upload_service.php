@@ -1,10 +1,29 @@
 <?php
-header("Content-Type: application/json");
-
+header("Content-Type: application/json; charset=utf-8");
+require("../../qiniu_config.php");
+require ("../../lib/qiniu/auth_digest.php");
 //the client will send fname,etag,key and three extra parameters here
 //in the format of a url query string or json data
 $allHeaders= getallheaders();
+$reqPath=$_SERVER["REQUEST_URI"];
 $reqContentType =$allHeaders["Content-Type"];
+$reqAuth=$allHeaders["Authorization"];
+$signToken=explode('QBox ', $reqAuth)[1];
+$respBody=@file_get_contents('php://input');
+$mac=new Qiniu_Mac($Qiniu_AccessKey,$Qiniu_SecretKey);
+if($reqContentType=="application/x-www-form-urlencoded"){
+	$localSignedToken=$mac->Sign($reqPath."\n".$respBody);
+}elseif($reqContentType=="application/json"){
+	$localSignedToken=$mac->Sign($reqPath."\n");
+}
+
+if ($signToken!=$localSignedToken)
+{
+	$error=array(
+		"error"=>"Invalid callback token"
+	);
+	echo json_encode($error);
+}
 //append this timestamp to fields' value
 $time=time();
 if ($reqContentType=="application/x-www-form-urlencoded")
