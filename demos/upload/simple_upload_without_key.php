@@ -24,7 +24,8 @@ $token = $putPolicy -> Token(null);
 	</div>
 	<div class="panel-body">
 		该实验的目的是迅速体验一下七牛的文件上传服务，你可以上传任何一个文件到七牛的服务器，而不需要指定一个名字。
-		七牛服务器会根据文件的内容来计算一个文件标识符来作为文件的名字（即key）。计算文件标识符的算法参考<a href="https://github.com/qiniu/qetag">etag</a>。
+		七牛服务器会根据文件的内容来计算这个文件标识符来作为文件的名字（即key）。
+		计算文件标识符的算法参考<a href="https://github.com/qiniu/qetag">etag</a>。
 	</div>
 </div>
 <div class="panel panel-default">
@@ -67,12 +68,12 @@ $token = $putPolicy -> Token(null);
 			</ul>
 			<div id="php-code">
 				<?php
-				include ("../code_snippet/simple_upload_with_key_token_php.html");
+				include ("../code_snippet/php/simple_upload_with_key_token_php.html");
 				?>
 			</div>
 			<div id="java-code">
 				<?php
-				include ("../code_snippet/simple_upload_with_key_token_java.html");
+				include ("../code_snippet/java/simple_upload_with_key_token_java.html");
 				?>
 			</div>
 		</div>

@@ -21,8 +21,7 @@ $token = $putPolicy -> Token(null);
 		目的
 	</div>
 	<div class="panel-body">
-		该实验的目的是演示上传时指定文件名，该文件名以form的参数提交，参数名称是key，七牛服务器将使用上传时
-		指定的key的值来作为文件的名字。
+		该实验的目的是演示上传时指定文件名，该文件名以form的参数提交，参数名称是key，七牛服务器将使用上传时指定的key的值来作为文件的名字。
 	</div>
 </div>
 <div class="panel panel-default">
@@ -68,12 +67,12 @@ $token = $putPolicy -> Token(null);
 			</ul>
 			<div id="php-code">
 				<?php
-				include ("../code_snippet/simple_upload_without_key_token_php.html");
+				include ("../code_snippet/php/simple_upload_without_key_token_php.html");
 				?>
 			</div>
 			<div id="java-code">
 				<?php
-				include ("../code_snippet/simple_upload_without_key_token_java.html");
+				include ("../code_snippet/java/simple_upload_without_key_token_java.html");
 				?>
 			</div>
 		</div>
@@ -131,9 +130,11 @@ $token = $putPolicy -> Token(null);
 		备注
 	</div>
 	<div class="panel-body">
-
 		这种是最基本的上传方式，只指定了上传文件的key（七牛用来作为文件名），上传文件和需要的token。
 		key可以指定为空，但是只能指定一次。因为多次上传相同的key的文件（内容不同）会报错。
+		
+		在实际应用过程中，要保证用户上传的文件不重名是很难的，这种情况下，我们可能需要对文件的名称加上一些
+		唯一的前缀后者做一些特殊的处理而不应该简单地使用用户指定的文件名。这个时候可能就需要使用PutPolicy里面的saveKey参数。
 	</div>
 </div>
 <?php

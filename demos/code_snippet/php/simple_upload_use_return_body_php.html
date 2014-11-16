@@ -1,0 +1,16 @@
+<pre><code>require_once("../../lib/qiniu/rs.php");
+Qiniu_SetKeys($Qiniu_AccessKey, $Qiniu_SecretKey);
+$putPolicy=new Qiniu_RS_PutPolicy($Qiniu_Public_Bucket);
+//json format
+$returnBody=array(
+	"fname"=>"$(fname)",
+	"fsize"=>"$(fsize)",
+	"bucket"=>"$(bucket)",
+	"exParam1"=>"$(x:exParam1)",
+	"exParam2"=>"$(x:exParam2)",
+	"exParam3"=>"$(x:exParam3)"
+);
+$returnBody=json_encode($returnBody);
+$putPolicy->ReturnBody=$returnBody;
+$token=$putPolicy->Token(null);
+</code></pre>

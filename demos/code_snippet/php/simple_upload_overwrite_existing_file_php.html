@@ -1,0 +1,11 @@
+<pre><code>require_once ("../../lib/qiniu/rs.php");
+if (isset($_GET["keyToOverwrite"])) {
+	$keyToOverwrite = $_GET["keyToOverwrite"];
+	if (!empty($keyToOverwrite)) {
+		Qiniu_SetKeys($Qiniu_AccessKey, $Qiniu_SecretKey);
+		$putPolicy = new Qiniu_RS_PutPolicy($Qiniu_Public_Bucket);
+		$putPolicy -> Scope = $Qiniu_Public_Bucket . ":" . $keyToOverwrite;
+		$putPolicy -> InsertOnly = 0;
+		$token = $putPolicy -> Token(null);
+	}
+}</code></pre>

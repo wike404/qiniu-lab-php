@@ -1,0 +1,7 @@
+<pre><code>require_once("../../lib/qiniu/rs.php");
+Qiniu_SetKeys($Qiniu_AccessKey, $Qiniu_SecretKey);
+$putPolicy=new Qiniu_RS_PutPolicy($Qiniu_Public_Bucket);
+//use a random key for saveKey
+$putPolicy->SaveKey="qiniu_cloud_storage_".time();
+$token=$putPolicy->Token(null);
+</code></pre>
