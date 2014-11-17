@@ -24,7 +24,7 @@ require ("../../qiniu_config.php");
 		实验
 	</div>
 	<div class="panel-body">
-		<form method="post" action="<?php echo $APP_ROOT; ?>/qiniu-lab-php/demos/rs/rs_stat_action.php"
+		<form method="post" action="<?php echo $APP_ROOT; ?>/demos/rs/rs_stat_action.php"
 		role="form" id="rs-stat-form">
 			<div class="form-group">
 				<input name="bucket" value="" placeholder="请指定空间名称" class="form-control"/>
