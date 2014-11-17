@@ -89,7 +89,7 @@ require_once ("../../lib/qiniu/auth_digest.php");
 			persistId.val("");
 			var bucket = $.trim(pfopForm.find("input[name='bucket']")[0].value);
 			var key = $.trim(pfopForm.find("input[name='key']")[0].value);
-			var fops = $.trim(pfopForm.find("input[name='fops']")[0].value);
+			var fops = $.trim(pfopForm.find("textarea[name='fops']")[0].value);
 			var notifyURL = $.trim(pfopForm.find("input[name='notifyURL']")[0].value);
 			var force = $.trim(pfopForm.find("select[name='force']")[0].value);
 			var pipeline = $.trim(pfopForm.find("input[name='pipeline']")[0].value);
