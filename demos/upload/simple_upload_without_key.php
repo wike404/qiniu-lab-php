@@ -34,7 +34,6 @@ $token = $putPolicy -> Token(null);
 	</div>
 	<div class="panel-body">
 		<form method="post" action="http://upload.qiniu.com" enctype="multipart/form-data" role="form">
-			<h1></h1>
 			<div class="form-group">
 				<div class="input-group">
 					<span class="input-group-addon">Token</span>
