@@ -1,5 +1,5 @@
 <?php
-$PAGE_TITLE = "Move 将源空间的指定资源移动到目标空间，或在同一空间内对资源重命名。";
+$PAGE_TITLE = "Delete 删除指定空间的资源";
 ?>
 <?php
 require ("../../header.php");
@@ -9,14 +9,14 @@ require ("../../qiniu_config.php");
 ?>
 
 <p class="title">
-	Move 将源空间的指定资源移动到目标空间，或在同一空间内对资源重命名。
+	Delete 删除指定空间的资源
 </p>
 <div class="panel panel-default">
 	<div class="panel-heading">
 		目的
 	</div>
 	<div class="panel-body">
-		将源空间的指定资源移动到目标空间，或在同一空间内对资源重命名。具体细节参考<a href="http://developer.qiniu.com/docs/v6/api/reference/rs/move.html">文档</a>。
+		该实验演示如何删除一个空间中的文件。具体细节参考<a href="http://developer.qiniu.com/docs/v6/api/reference/rs/delete.html">文档</a>。
 	</div>
 </div>
 <div class="panel panel-default">
@@ -24,22 +24,16 @@ require ("../../qiniu_config.php");
 		实验
 	</div>
 	<div class="panel-body">
-		<form method="post" action="<?php echo $APP_ROOT; ?>/demos/rs/rs_move_action.php"
-		role="form" id="rs-move-form">
+		<form method="post" action="<?php echo $APP_ROOT; ?>/demos/rs/rs_delete_action.php"
+		role="form" id="rs-delete-form">
 			<div class="form-group">
-				<input name="srcBucket" value="" placeholder="请指定源空间名称" class="form-control"/>
+				<input name="bucket" value="" placeholder="请指定空间名称" class="form-control"/>
 			</div>
 			<div class="form-group">
-				<input name="srcKey" value="" placeholder="请指定源文件的key" class="form-control"/>
+				<input name="key" value="" placeholder="请指定文件的key" class="form-control"/>
 			</div>
 			<div class="form-group">
-				<input name="destBucket" value="" placeholder="请指定目标空间名称" class="form-control"/>
-			</div>
-			<div class="form-group">
-				<input name="destKey" value="" placeholder="请指定目标文件的key" class="form-control"/>
-			</div>
-			<div class="form-group">
-				<input type="submit" value="Move" class="btn btn-info"/>
+				<input type="submit" value="Delete" class="btn btn-info"/>
 			</div>
 		</form>
 		<p class="alert alert-danger" id="form-error" style="display: none;"></p>
@@ -48,21 +42,19 @@ require ("../../qiniu_config.php");
 </div>
 <script type="text/javascript">
 	$(document).ready(function() {
-		var rsMoveForm = $("#rs-move-form");
+		var rsDeleteForm = $("#rs-delete-form");
 		var formError = $("#form-error");
 		var formInfo = $("#form-info");
-		rsMoveForm.submit(function(event) {
+		rsDeleteForm.submit(function() {
 			event.preventDefault();
-			var actionUrl = rsMoveForm.attr("action");
-			var srcBucket = rsMoveForm.find("input[name='srcBucket']")[0].value;
-			var srcKey = rsMoveForm.find("input[name='srcKey']")[0].value;
-			var destBucket = rsMoveForm.find("input[name='destBucket']")[0].value;
-			var destKey = rsMoveForm.find("input[name='destKey']")[0].value;
+			var actionUrl = rsDeleteForm.attr("action");
+			var bucket = rsDeleteForm.find("input[name='bucket']")[0].value;
+			var key = rsDeleteForm.find("input[name='key']")[0].value;
+			bucket = $.trim(bucket);
+			key = $.trim(key);
 			$.post(actionUrl, {
-				srcBucket : srcBucket,
-				srcKey : srcKey,
-				destBucket : destBucket,
-				destKey : destKey
+				bucket : bucket,
+				key : key,
 			}, function(respData) {
 				var error = respData.error;
 				if (error != undefined) {
