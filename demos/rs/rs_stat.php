@@ -43,8 +43,8 @@ require ("../../qiniu_config.php");
 <script type="text/javascript">
 	$(document).ready(function() {
 		var rsStatForm = $("#rs-stat-form");
-		var formError=$("#form-error");
-		var formInfo=$("#form-info");
+		var formError = $("#form-error");
+		var formInfo = $("#form-info");
 		rsStatForm.submit(function() {
 			event.preventDefault();
 			var actionUrl = rsStatForm.attr("action");
@@ -56,39 +56,28 @@ require ("../../qiniu_config.php");
 				bucket : bucket,
 				key : key,
 			}, function(respData) {
-				var error=respData.error;
-				if(error!=undefined){
+				var error = respData.error;
+				if (error != undefined) {
 					formError.text(error);
 					formError.show();
 					formInfo.hide();
-				}else{
-					var data=respData[0];
-					var error=respData[1];
-					if(data!=null)
-					{
-						var fsize=data.fsize;
-						var hash=data.hash;
-						var mimeType=data.mimeType;
-						var putTime=data.putTime;
-						formInfo.html("<ol><li>fsize: "+fsize
-						+"</li><li>hash: "+hash
-						+"</li><li>mimeType: "+mimeType
-						+"</li><li>putTime: "+putTime
-						+"</li></ol>");
+				} else {
+					var data = respData[0];
+					var error = respData[1];
+					if (data != null) {
+						var fsize = data.fsize;
+						var hash = data.hash;
+						var mimeType = data.mimeType;
+						var putTime = data.putTime;
+						formInfo.html("<ol><li>fsize: " + fsize + "</li><li>hash: " + hash + "</li><li>mimeType: " + mimeType + "</li><li>putTime: " + putTime + "</li></ol>");
 						formInfo.show();
 						formError.hide();
-					}
-					else
-					{
-						var err=error.Err;
-						var reqId=error.Reqid;
-						var details=error.Details;
-						var code=error.Code;
-						formError.html("<ol><li>Err: "+err
-						+"</li><li>Reqid: "+reqId
-						+"</li><li>Details: "+details
-						+"</li><li>Code: "+code
-						+"</li></ol>");
+					} else {
+						var err = error.Err;
+						var reqId = error.Reqid;
+						var details = error.Details;
+						var code = error.Code;
+						formError.html("<ol><li>Err: " + err + "</li><li>Reqid: " + reqId + "</li><li>Details: " + details + "</li><li>Code: " + code + "</li></ol>");
 						formError.show();
 						formInfo.hide();
 					}

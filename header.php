@@ -48,6 +48,12 @@
 				</ul>
 	        </li>
 	        <li class="dropdown">
+	        	<a href="#" class="dropdown-toggle" data-toggle="dropdown">基础工具 <span class="caret"></span></a>
+	        	<ul class="dropdown-menu" role="menu">
+	        		<li><a href="<?php echo $APP_ROOT?>/demos/tools/create_private_access_token.php">创建私有资源访问Token</a></li>
+	        	</ul>
+	        </li>
+	        <li class="dropdown">
 	        	<a href="#" class="dropdown-toggle" data-toggle="dropdown">API实例-Form模式 <span class="caret"></span></a>
 	        	<ul class="dropdown-menu" role="menu">
 	        		<li><a href="<?php echo $APP_ROOT;?>/demos/upload/simple_upload_without_key.php">简单上传-不指定上传文件key</a></li>
@@ -72,6 +78,7 @@
 	        		<li><a href="<?php echo $APP_ROOT;?>/demos/fop/pfop.php">触发持久化</a></li>
 	        		<li class="divider"></li>
 	        		<li><a href="<?php echo $APP_ROOT;?>/demos/rs/rs_stat.php">Stat获取文件基本信息</a></li>
+	        		<li><a href="<?php echo $APP_ROOT;?>/demos/rs/rs_copy.php">Copy将指定资源复制为新命名资源</a></li>
 	        	</ul>
 	        </li>
 	        <li class="dropdown">
