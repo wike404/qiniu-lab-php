@@ -79,6 +79,7 @@
 	        		<li class="divider"></li>
 	        		<li><a href="<?php echo $APP_ROOT;?>/demos/rs/rs_stat.php">Stat获取文件基本信息</a></li>
 	        		<li><a href="<?php echo $APP_ROOT;?>/demos/rs/rs_copy.php">Copy将指定资源复制为新命名资源</a></li>
+	        		<li><a href="<?php echo $APP_ROOT;?>/demos/rs/rs_move.php">Move将源空间的指定资源移动到目标空间</a></li>
 	        	</ul>
 	        </li>
 	        <li class="dropdown">
