@@ -45,7 +45,7 @@ require ("../../qiniu_config.php");
 		var rsStatForm = $("#rs-stat-form");
 		var formError = $("#form-error");
 		var formInfo = $("#form-info");
-		rsStatForm.submit(function() {
+		rsStatForm.submit(function(event) {
 			event.preventDefault();
 			var actionUrl = rsStatForm.attr("action");
 			var bucket = rsStatForm.find("input[name='bucket']")[0].value;

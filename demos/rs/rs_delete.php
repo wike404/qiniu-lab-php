@@ -45,7 +45,7 @@ require ("../../qiniu_config.php");
 		var rsDeleteForm = $("#rs-delete-form");
 		var formError = $("#form-error");
 		var formInfo = $("#form-info");
-		rsDeleteForm.submit(function() {
+		rsDeleteForm.submit(function(event) {
 			event.preventDefault();
 			var actionUrl = rsDeleteForm.attr("action");
 			var bucket = rsDeleteForm.find("input[name='bucket']")[0].value;
