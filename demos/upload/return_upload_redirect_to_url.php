@@ -9,7 +9,7 @@ require ("../../qiniu_config.php");
 require_once ("../../lib/qiniu/rs.php");
 Qiniu_SetKeys($Qiniu_AccessKey, $Qiniu_SecretKey);
 $putPolicy = new Qiniu_RS_PutPolicy($Qiniu_Public_Bucket);
-$putPolicy->ReturnUrl=$APP_ROOT."/qiniu-lab-php/demos/service/return_upload_service.php";
+$putPolicy->ReturnUrl=$APP_ROOT."/demos/service/return_upload_service.php";
 //url format
 //$putPolicy->ReturnBody="fname=$(fname)&etag=$(etag)&key=$(key)&exParam1=$(x:exParam1)&exParam2=$(x:exParam2)&exParam3=$(x:exParam3)";
 //json format
