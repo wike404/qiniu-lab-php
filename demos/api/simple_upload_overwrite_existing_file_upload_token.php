@@ -1,4 +1,5 @@
 <?php
+header("Content-Type:application/json");
 require("../../qiniu_config.php");
 require_once("../../lib/qiniu/rs.php");
 if (isset($_POST["key"]) && !empty($_POST["key"])) {
@@ -11,6 +12,6 @@ if (isset($_POST["key"]) && !empty($_POST["key"])) {
     $token = $putPolicy->Token(null);
     $respBody = array("uptoken" => $token);
 } else {
-    $respBody=array("error"=>"no key specified");
+    $respBody = array("error" => "no key specified");
 }
 echo json_encode($respBody);

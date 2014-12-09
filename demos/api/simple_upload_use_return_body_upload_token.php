@@ -1,7 +1,7 @@
 <?php
+header("Content-Type: application/json; charset=utf-8");
 require_once("../../lib/qiniu/rs.php");
 require_once("../../qiniu_config.php");
-header("Content-Type: application/json; charset=utf-8");
 Qiniu_SetKeys($Qiniu_AccessKey, $Qiniu_SecretKey);
 $putPolicy = new Qiniu_RS_PutPolicy($Qiniu_Public_Bucket);
 //json format
