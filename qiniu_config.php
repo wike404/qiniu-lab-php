@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION))
+{
+    session_start();
+}
 $Qiniu_AccessKey = "";
 $Qiniu_SecretKey = "";
 $Qiniu_Public_Bucket = "";
