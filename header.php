@@ -1,5 +1,6 @@
 <?php
-$APP_ROOT = "http://localhost/~jemy/qiniu-lab-php";
+$APP_ROOT = "http://4b446d29.ngrok.com/~jemy/qiniu-lab-php";
+$APP_CALLBACK_ROOT = "http://4b446d29.ngrok.com/~jemy/qiniu-lab-php";
 if (!isset($PAGE_TITLE)) {
     $PAGE_TITLE = "七牛实验室";
 }
