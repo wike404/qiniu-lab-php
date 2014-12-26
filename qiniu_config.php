@@ -1,8 +1,10 @@
 <?php
-$Qiniu_AccessKey = "yxr8_XZK1YtCxWQbO-wX--yYlA1LfbB661AmFOBD";
-$Qiniu_SecretKey = "kPjvaggdivMcKqJmnYfj-ue8iOPIAOMk30I3gEnK";
-$Qiniu_Public_Bucket = "if-pbl";
-$Qiniu_Private_Bucket = "if-pri";
+$APP_CALLBACK_ROOT = "http://4b446d29.ngrok.com/~jemy/qiniu-lab-php";
+
+$Qiniu_AccessKey = "<Your AccessKey>";
+$Qiniu_SecretKey = "<Your SecretKey>";
+$Qiniu_Public_Bucket = "<Public Bucket>";
+$Qiniu_Private_Bucket = "<Private Bucket>";
 
 if (empty($Qiniu_AccessKey)) {
     exit("<p class='alert alert-danger'>Error: Please set the access key</p>");
