@@ -11,7 +11,7 @@ require ("../../qiniu_config.php");
 require_once ("../../lib/qiniu/rs.php");
 Qiniu_SetKeys($Qiniu_AccessKey, $Qiniu_SecretKey);
 $putPolicy = new Qiniu_RS_PutPolicy($Qiniu_Public_Bucket);
-$putPolicy -> CallbackUrl = $APP_ROOT . "/demos/service/callback_upload_service.php";
+$putPolicy -> CallbackUrl = $APP_ROOT . "/demos/service/callback_upload_service_auth_use_bodySha1.php?bodySha1=$(bodySha1)";
 $callbackBody = array("fname" => "$(fname)", "etag" => "$(etag)", "key" => "$(key)", "exParam1" => "$(x:exParam1)", "exParam2" => "$(x:exParam2)", "exParam3" => "$(x:exParam3)");
 $callbackBody = json_encode($callbackBody);
 //your own server will get the callbackbody posted by qiniu server with a content-type of application/json
