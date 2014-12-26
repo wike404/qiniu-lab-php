@@ -1,24 +1,8 @@
 <?php
-if(!isset($_SESSION))
-{
-    session_start();
-}
-$Qiniu_AccessKey = "";
-$Qiniu_SecretKey = "";
-$Qiniu_Public_Bucket = "";
-$Qiniu_Private_Bucket = "";
-if (isset($_SESSION["Qiniu_AccessKey"])) {
-    $Qiniu_AccessKey = $_SESSION["Qiniu_AccessKey"];
-}
-if (isset($_SESSION["Qiniu_SecretKey"])) {
-    $Qiniu_SecretKey = $_SESSION["Qiniu_SecretKey"];
-}
-if (isset($_SESSION["Qiniu_PublicBucket"])) {
-    $Qiniu_Public_Bucket = $_SESSION["Qiniu_PublicBucket"];
-}
-if (isset($_SESSION["Qiniu_PrivateBucket"])) {
-    $Qiniu_Private_Bucket = $_SESSION["Qiniu_PrivateBucket"];
-}
+$Qiniu_AccessKey = "yxr8_XZK1YtCxWQbO-wX--yYlA1LfbB661AmFOBD";
+$Qiniu_SecretKey = "kPjvaggdivMcKqJmnYfj-ue8iOPIAOMk30I3gEnK";
+$Qiniu_Public_Bucket = "if-pbl";
+$Qiniu_Private_Bucket = "if-pri";
 
 if (empty($Qiniu_AccessKey)) {
     exit("<p class='alert alert-danger'>Error: Please set the access key</p>");

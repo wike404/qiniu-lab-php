@@ -1,8 +1,4 @@
 <?php
-if(!isset($_SESSION))
-{
-    session_start();
-}
 $APP_ROOT = "http://localhost/~jemy/qiniu-lab-php";
 if (!isset($PAGE_TITLE)) {
     $PAGE_TITLE = "七牛实验室";
