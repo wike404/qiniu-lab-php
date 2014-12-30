@@ -10,13 +10,13 @@ $reqContentType = $allHeaders["Content-Type"];
 
 $respBody = @file_get_contents('php://input');
 $localRespBodySha1 = sha1($respBody);
-/*$respBodySha1 = $_GET["bodySha1"];
+$respBodySha1 = $_GET["bodySha1"];
 if ($localRespBodySha1 != $respBodySha1) {
     $error = array(
         "error" => "Invalid body sha1"
     );
     echo json_encode($error);
-}*/
+}
 
 //append this timestamp to fields' value
 $time = time();
