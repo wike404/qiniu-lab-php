@@ -1,7 +1,6 @@
 <?php
 require_once("../../qiniu_config.php");
 require_once("../../lib/qiniu/auth_digest.php");
-require_once("../../lib/qiniu/conf.php");
 require_once("../../lib/qiniu/rs.php");
 require_once("../utils/print_result.php");
 

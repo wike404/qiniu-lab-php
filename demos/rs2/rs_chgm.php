@@ -1,15 +1,17 @@
 <?php
 require_once("../../qiniu_config.php");
 require_once("../../lib/qiniu/auth_digest.php");
+require_once("../../lib/qiniu/conf.php");
 require_once("../../lib/qiniu/rs.php");
 require_once("../utils/print_result.php");
 
-//prefetch接口更新镜像空间中的资源。
-//文档：http://developer.qiniu.com/docs/v6/api/reference/rs/prefetch.html
-$srcUrl = "http://www.baidu.com/img/bdlogo.png";
+//chgm接口用来手动设置资源的mimeType
+//文档：http://developer.qiniu.com/docs/v6/api/reference/rs/chgm.html
+$bucket = "if-pbl";
+$key = "baidu_logo.png";
+$mimeType = "image/jpg";
 
-$QINIU_IOVIP_HOST = 'http://iovip.qbox.me';
-$fetchUri = $QINIU_IOVIP_HOST . "/prefetch/" . Qiniu_Encode($srcUrl);
+$fetchUri = $QINIU_RS_HOST . "/chgm/" . Qiniu_Encode($bucket . ":" . $key) . "/mime/" . Qiniu_Encode($mimeType);
 
 $mac = new Qiniu_Mac($Qiniu_AccessKey, $Qiniu_SecretKey);
 $mclient = new Qiniu_MacHttpClient($mac);
