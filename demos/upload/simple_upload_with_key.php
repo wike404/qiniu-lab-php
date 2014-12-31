@@ -2,7 +2,7 @@
 require_once("../../qiniu_config.php");
 require_once("../../lib/qiniu/io.php");
 require_once("../../lib/qiniu/rs.php");
-require_once("print_result.php");
+require_once("../utils/print_result.php");
 
 $putPolicy = new Qiniu_RS_PutPolicy($Qiniu_Public_Bucket);
 $auth = new Qiniu_Mac($Qiniu_AccessKey, $Qiniu_SecretKey);
@@ -24,7 +24,7 @@ $params = array(
 );
 $putExtra->Params = $params;
 list($ret, $err) = Qiniu_PutFile($upToken, $key, $localFile, $putExtra);
-QiniuLab_PrintUploadResult($ret, $err);
+QiniuLab_PrintResult($ret, $err);
 
 //有Key数据上传
 $upToken = $putPolicy->Token($auth);
@@ -43,4 +43,4 @@ $params = array(
 );
 $putExtra->Params = $params;
 list($ret, $err) = Qiniu_Put($upToken, $key, $localData, $putExtra);
-QiniuLab_PrintUploadResult($ret, $err);
+QiniuLab_PrintResult($ret, $err);

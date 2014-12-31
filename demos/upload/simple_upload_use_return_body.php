@@ -2,7 +2,7 @@
 require_once("../../qiniu_config.php");
 require_once("../../lib/qiniu/io.php");
 require_once("../../lib/qiniu/rs.php");
-require_once("print_result.php");
+require_once("../utils/print_result.php");
 
 //使用ReturnBody自定义返回内容
 $putPolicy = new Qiniu_RS_PutPolicy($Qiniu_Public_Bucket);
@@ -37,4 +37,4 @@ $params = array(
 );
 $putExtra->Params = $params;
 list($ret, $err) = Qiniu_PutFile($upToken, $key, $localFile, $putExtra);
-QiniuLab_PrintUploadResult($ret, $err);
+QiniuLab_PrintResult($ret, $err);

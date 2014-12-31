@@ -2,7 +2,7 @@
 require_once("../../qiniu_config.php");
 require_once("../../lib/qiniu/io.php");
 require_once("../../lib/qiniu/rs.php");
-require_once("print_result.php");
+require_once("../utils/print_result.php");
 
 //带图片处理的文件上传
 $auth = new Qiniu_Mac($Qiniu_AccessKey, $Qiniu_SecretKey);
@@ -73,4 +73,4 @@ $params = array(
 );
 $putExtra->Params = $params;
 list($ret, $err) = Qiniu_PutFile($upToken, $key, $localFile, $putExtra);
-QiniuLab_PrintUploadResult($ret, $err);
+QiniuLab_PrintResult($ret, $err);

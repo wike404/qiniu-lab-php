@@ -2,7 +2,7 @@
 require_once("../../qiniu_config.php");
 require_once("../../lib/qiniu/io.php");
 require_once("../../lib/qiniu/rs.php");
-require_once("print_result.php");
+require_once("../utils/print_result.php");
 
 //使用SaveKey保存上传文件名
 $putPolicy = new Qiniu_RS_PutPolicy($Qiniu_Public_Bucket);
@@ -23,10 +23,10 @@ $params = array(
 );
 $putExtra->Params = $params;
 list($ret, $err) = Qiniu_PutFile($upToken, null, $localFile, $putExtra);
-QiniuLab_PrintUploadResult($ret, $err);
+QiniuLab_PrintResult($ret, $err);
 
 //使用扩展参数来构成SaveKey
 $putPolicy->SaveKey = "$(x:exParam1)_$(x:exParam2)_$(x:exParam3)_$(etag)";
 $upToken = $putPolicy->Token($auth);
 list($ret, $err) = Qiniu_PutFile($upToken, null, $localFile, $putExtra);
-QiniuLab_PrintUploadResult($ret, $err);
+QiniuLab_PrintResult($ret, $err);
