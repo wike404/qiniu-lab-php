@@ -12,4 +12,3 @@ $mac = new Qiniu_Mac($Qiniu_AccessKey, $Qiniu_SecretKey);
 $mclient = new Qiniu_MacHttpClient($mac);
 list($ret, $err) = Qiniu_RS_Stat($mclient, $bucket, $key);
 QiniuLab_PrintResult($ret, $err);
-print(urldecode("wiki/images/wikidev/archive/7/72/20141231045418%21Wqsqs_%284%29.jpg"));
