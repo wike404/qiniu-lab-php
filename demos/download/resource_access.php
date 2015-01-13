@@ -2,11 +2,13 @@
 require_once("../../lib/qiniu/auth_digest.php");
 function create_public_resource_url($domain, $key)
 {
+    $key = urlencode($key);
     return $domain . "/" . $key;
 }
 
 function create_public_download_url($domain, $key, $save_file_name = NULL)
 {
+    $key = urlencode($key);
     $encoded_save_file_name = "";
     if (isset($save_file_name) && !empty($save_file_name)) {
         $encoded_save_file_name = urlencode($save_file_name);
@@ -16,6 +18,7 @@ function create_public_download_url($domain, $key, $save_file_name = NULL)
 
 function create_private_resource_url($mac, $domain, $key, $expired_in_seconds)
 {
+    $key = urlencode($key);
     $deadline = time() + $expired_in_seconds;
     $base_url = $domain . "/" . $key . "?e=" . $deadline;
     $signedToken = Qiniu_Sign($mac, $base_url);
@@ -25,6 +28,7 @@ function create_private_resource_url($mac, $domain, $key, $expired_in_seconds)
 
 function create_private_download_url($mac, $domain, $key, $expired_in_seconds, $save_file_name = NULL)
 {
+    $key = urlencode($key);
     $deadline = time() + $expired_in_seconds;
     $encoded_save_file_name = "";
     if (isset($save_file_name) && !empty($save_file_name)) {
@@ -50,7 +54,7 @@ $mac = new Qiniu_Mac($access_key, $secret_key);
 $private_resource_url = create_private_resource_url($mac, $private_bucket_domain, $private_file_key, 3600);
 $private_download_url = create_private_download_url($mac, $private_bucket_domain, $private_file_key, 3600, "七牛logo.jpg");
 
-print($public_resource_url."\r\n");
-print($public_download_url."\r\n");
-print($private_resource_url."\r\n");
-print($private_download_url."\r\n");
+print($public_resource_url . "\r\n");
+print($public_download_url . "\r\n");
+print($private_resource_url . "\r\n");
+print($private_download_url . "\r\n");
