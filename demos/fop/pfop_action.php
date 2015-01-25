@@ -28,7 +28,7 @@ if (!isset($_POST["bucket"])) {
 	$fops = urlencode($fops);
 	$notifyURL = urlencode($notifyURL);
 	//create request
-	$requestURL = "http://api.qiniu.com/pfop";
+	$requestURL = "http://api.qiniu.com/pfop/";
 	if (empty($pipeline)) {
 		$requestBody = sprintf("bucket=%s&key=%s&fops=%s&notifyURL=%s&force=%d", $bucket, $key, $fops, $notifyURL, $force);
 	} else {
