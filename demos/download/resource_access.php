@@ -21,8 +21,8 @@ function create_private_resource_url($mac, $domain, $key, $expired_in_seconds)
     $key = urlencode($key);
     $deadline = time() + $expired_in_seconds;
     $base_url = $domain . "/" . $key . "?e=" . $deadline;
-    $signedToken = Qiniu_Sign($mac, $base_url);
-    $new_url = $base_url . "&token=" . $signedToken;
+    $signed_token = Qiniu_Sign($mac, $base_url);
+    $new_url = $base_url . "&token=" . $signed_token;
     return $new_url;
 }
 
@@ -35,14 +35,14 @@ function create_private_download_url($mac, $domain, $key, $expired_in_seconds, $
         $encoded_save_file_name = urlencode($save_file_name);
     }
     $base_url = $domain . "/" . $key . "?attname=" . $encoded_save_file_name . "&e=" . $deadline;
-    $signedToken = Qiniu_Sign($mac, $base_url);
-    $new_url = $base_url . "&token=" . $signedToken;
+    $signed_token = Qiniu_Sign($mac, $base_url);
+    $new_url = $base_url . "&token=" . $signed_token;
     return $new_url;
 }
 
 $public_bucket_domain = "http://7pn64c.com1.z0.glb.clouddn.com";
 $private_bucket_domain = "http://7qnctm.com1.z0.glb.clouddn.com";
-$public_file_key = "bdlogo.png";
+$public_file_key = "qiniu/图片.jpg";
 $private_file_key = "qiniu.jpg";
 
 $public_resource_url = create_public_resource_url($public_bucket_domain, $public_file_key);

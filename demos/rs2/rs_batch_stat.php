@@ -6,7 +6,7 @@ require_once("../utils/print_result.php");
 
 //batch stat接口批量查看文件信息
 //文档：
-//http://developer.qiniu.com/docs/v6/api/reference/rs/stat.html
+//http://developer.qiniu.com/docs/v6/api/reference/rs/batch.html
 //http://developer.qiniu.com/docs/v6/api/reference/rs/stat.html
 $op1 = Qiniu_RS_URIStat("if-pbl", "qiniu.jpg");
 $op2 = Qiniu_RS_URIStat("if-pbl", "baidu_logo.png");
