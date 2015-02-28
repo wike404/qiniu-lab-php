@@ -5,7 +5,7 @@ require_once("../../qiniu_config.php");
 Qiniu_SetKeys($Qiniu_AccessKey, $Qiniu_SecretKey);
 $putPolicy = new Qiniu_RS_PutPolicy($Qiniu_Public_Bucket);
 
-$fsizeLimit = 1024;// maximum file length in bytes
+$fsizeLimit = 1024 * 1024;// maximum file length in bytes
 $putPolicy->FsizeLimit = $fsizeLimit;
 
 $token = $putPolicy->Token(null);
