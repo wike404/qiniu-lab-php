@@ -1,6 +1,6 @@
 <?php
 require_once("../../../bootstrap.php");
-require_once("../../utils.php");
+require_once("../../../utils.php");
 use Qiniu\Storage;
 
 //简单无key数据上传，设定扩展参数
