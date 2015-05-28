@@ -11,7 +11,7 @@ function __autoload($class_name)
 
 require_once __DIR__ . "/../library/Qiniu/functions.php";
 
-$QINIU_ACCESS_KEY = "aGUmGfTmXycYQ1FxFnULfCJe0hw-bJiD3hZpgHgY";
-$QINIU_SECRET_KEY = "ys6ztcrbTvQDNljzj4uxKTTyUzc_XI8Hbfcskyho";
+$QINIU_ACCESS_KEY = "TQt-iplt8zbK3LEHMjNYyhh6PzxkbelZFRMl10MM";
+$QINIU_SECRET_KEY = "hTIq4H8N5NfCme8gDvZqr6EDmvlIQsRV5L65bVce";
 $QINIU_PUBLIC_BUCKET = "if-pbl";
 $QINIU_PRIVATE_BUCKET = "if-pri";
