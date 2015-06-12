@@ -22,6 +22,7 @@ require_once("../../qiniu_download_config.php");
         实验
     </div>
     <div class="panel-body" id="wbu-container">
+        <input id="uptoken-url" type="hidden" value="<?php echo $APP_ROOT . "/demos/api/simple_upload_with_extra_params_token.php" ?>"/>
         <button class="btn btn-info" id="wbu1-select-f">选择一个文件</button>
     </div>
     <div class="panel-body">
@@ -46,7 +47,6 @@ require("../../footer.php");
         runtimes: 'html5,flash,html4',
         browse_button: 'wbu1-select-f',
         domain: '<?php echo $Qiniu_Public_Bucket_Download_Domain;?>',
-        uptoken_url: '<?php echo $APP_ROOT . "/demos/api/simple_upload_with_key_upload_token.php" ?>',
         container: 'wbu-container',
         max_file_size: '100mb',
         flash_swf_url: '../../public/plugin/plupload-2.1.2/Moxie.swf',
@@ -55,7 +55,30 @@ require("../../footer.php");
         drop_element: 'wbu-container',
         chunk_size: '4mb',
         auto_start: true,
+        x_vars:{
+            'time': function(up,file) {
+                var time = (new Date()).getTime();
+                return time;
+            },
+            'size':function(up,file){
+                var size=file.size;
+                return size;
+            }
+        },
         init: {
+            'BeforeUpload':function(up,file){
+                fname=file.name;
+                ext="";
+                index=fname.lastIndexOf(".")
+                if(index!=-1) {
+                    ext = fname.substring(index + 1)
+                }
+                var uptoken_url=$("#uptoken-url").val()+"?fname="+fname+"&ext="+ext;
+                $.post(uptoken_url,function(data){
+                    this.setOption("uptoken",data.uptoken);
+                });
+
+            },
             'FileUploaded': function (up, file, info) {
                 var ret = $.parseJSON(info);
                 var key = ret.key;
@@ -64,6 +87,7 @@ require("../../footer.php");
                 wbuResult.show();
             }
         }
-
     });
+
+    uploader.pr
 </script>
