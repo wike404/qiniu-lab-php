@@ -1,10 +1,10 @@
 <?php
 header("Content-Type: application/json; charset=utf-8");
 $playlist = array(
-    array("name" => "sea", "url" => "http://qiniu-lab.qiniudn.com/sea.mp4"),
-    array("name" => "fun", "url" => "http://qiniu-lab.qiniudn.com/aaa.mp4",),
-    array("name" => "rat爱厨艺", "url" => "http://qiniu-lab.qiniudn.com/rat.mp4"),
-    array("name" => "qiniu视频名片", "url" => "http://qiniu-lab.qiniudn.com/see.mp4",)
+    array("name" => "Go Time (mp3)", "url"=>"http://7rf353.com1.z0.glb.clouddn.com/gotime.mp3",),
+    array("name"=>"Go Time (m3u8)","url"=>"http://7rf353.com1.z0.glb.clouddn.com/gotime.m3u8"),
+    array("name" => "七牛视频名片 (mp4)", "url" => "http://7rf353.com1.z0.glb.clouddn.com/qiniu_640x360.mp4",),
+    array("name"=>"七牛视频名片 (m3u8)","url"=>"http://7rf353.com1.z0.glb.clouddn.com/qiniu_640x360.m3u8"),
 );
 $respData = array(
     "playlist" => $playlist
